@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
   useless_job:
+    runs-on: ubuntu-latest
     steps:
     - uses: docker://alpine:3.8
     - name: some figlet thing
