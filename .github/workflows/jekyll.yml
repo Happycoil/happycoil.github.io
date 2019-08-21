@@ -1,4 +1,4 @@
-name: gh pages CI
+name: fooling around
 
 on:
   push:
@@ -6,14 +6,11 @@ on:
       - master
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  useless_job:
     steps:
-    - uses: actions/checkout@v1
-    - name: Build the site in the jekyll/builder container
+    - uses: docker://alpine:3.8
+    - name: some figlet thing
       run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        apk update && apk upgrade \
+        apk add figlet \
+        figlet holy fig
